@@ -5,7 +5,7 @@ metadata:
   name: apps-sync
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1m0s
   path: ./releases
   prune: true
   sourceRef:
