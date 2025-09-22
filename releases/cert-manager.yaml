@@ -15,7 +15,7 @@ spec:
       version: 1.18.2
   install:
     createNamespace: true
-  interval: 1m0s
+  interval: 1m
   releaseName: cert-manager
   targetNamespace: cert-manager
   values:
