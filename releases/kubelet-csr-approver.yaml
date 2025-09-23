@@ -15,7 +15,7 @@ spec:
       version: 1.2.11
   interval: 30h
   releaseName: kubelet-csr-approver
-  targetNamespace: kube-systemr
+  targetNamespace: kube-system
   values:
     providerRegex: "k*"   
     providerIpPrefixes:
