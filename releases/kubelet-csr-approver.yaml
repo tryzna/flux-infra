@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kubelet-csr-approver
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: kubelet-csr-approver
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: kubelet-csr-approver
+        namespace: flux-system
+      version: 1.18.2
+  interval: 30h
+  releaseName: kubelet-csr-approver
+  targetNamespace: kube-systemr
+  values:
+    providerRegex: "k*"   
+    providerIpPrefixes:
+      - 10.230.20.0/24
