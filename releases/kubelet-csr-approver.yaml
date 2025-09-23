@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: kubelet-csr-approver
         namespace: flux-system
-      version: 1.18.2
+      version: 1.2.11
   interval: 30h
   releaseName: kubelet-csr-approver
   targetNamespace: kube-systemr
