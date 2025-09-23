@@ -16,3 +16,22 @@ spec:
   interval: 30m0s
   releaseName: metrics-server
   targetNamespace: kube-system
+  values:
+    args:
+      - kubelet-insecure-tls
+    metrics:
+      enabled: true
+    tls:
+      type: "cert-manager"
+      clusterDomain: cluster.local 
+      certManager:
+        addInjectorAnnotations: true
+        existingIssuer:
+          enabled: true
+          kind: "ClusterIssuer"
+          name: "tryzna-issuer"
+        duration: "365d"
+        renewBefore: "15d"
+
+    
+
