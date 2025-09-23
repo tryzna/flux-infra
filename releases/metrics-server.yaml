@@ -30,8 +30,8 @@ spec:
           enabled: true
           kind: "ClusterIssuer"
           name: "tryzna-issuer"
-        duration: "365d"
-        renewBefore: "15d"
+        duration: "8760h"
+        renewBefore: "360h"
 
     
 
