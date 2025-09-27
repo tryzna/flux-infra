@@ -37,7 +37,7 @@ spec:
       replicaAutoBalance: "true"
       storageOverProvisioningPercentage: "90"
       storageMinimalAvailablePercentage: "10"
-      guaranteedInstanceManagerCPU: 1
+      guaranteedInstanceManagerCPU: "1"
       kubernetesClusterAutoscalerEnabled: "true"
       v2DataEngine: "true"
       dataEngineHugepageEnabled: true
