@@ -34,15 +34,14 @@ spec:
     defaultSettings:
       allowRecurringJobWhileVolumeDetached: true
       defaultDataPath: "/opt/longhorn"
-      replicaAutoBalance: enabled
-      storageOverProvisioningPercentage: 90
-      storageMinimalAvailablePercentage: 10
+      replicaAutoBalance: "true"
+      storageOverProvisioningPercentage: "90"
+      storageMinimalAvailablePercentage: "10"
       guaranteedInstanceManagerCPU: 1
-      kubernetesClusterAutoscalerEnabled: true
-      v2DataEngine: true
+      kubernetesClusterAutoscalerEnabled: "true"
+      v2DataEngine: "true"
       dataEngineHugepageEnabled: true
-      autoCleanupSnapshotAfterOnDemandBackupCompleted: ~
-      rwxVolumeFastFailover: true
+      rwxVolumeFastFailover: "true"
     longhornUI:
       replicas: 1
     ingress:
