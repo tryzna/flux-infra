@@ -32,16 +32,16 @@ spec:
     preUpgradeChecker:
       jobEnabled: false
     defaultSettings:
-      allowRecurringJobWhileVolumeDetached: true
+      allowRecurringJobWhileVolumeDetached: "enabled"
       defaultDataPath: "/opt/longhorn"
-      replicaAutoBalance: "true"
+      replicaAutoBalance: "enabled"
       storageOverProvisioningPercentage: "90"
       storageMinimalAvailablePercentage: "10"
       guaranteedInstanceManagerCPU: "1"
-      kubernetesClusterAutoscalerEnabled: "true"
-      v2DataEngine: "true"
-      dataEngineHugepageEnabled: true
-      rwxVolumeFastFailover: "true"
+      kubernetesClusterAutoscalerEnabled: "enabled"
+      v2DataEngine: "enabled"
+      dataEngineHugepageEnabled: "enabled"
+      rwxVolumeFastFailover: "enabled"
     longhornUI:
       replicas: 1
     ingress:
