@@ -34,7 +34,7 @@ spec:
     defaultSettings:
       allowRecurringJobWhileVolumeDetached: true
       defaultDataPath: "/opt/longhorn"
-      replicaAutoBalance: true
+      replicaAutoBalance: enabled
       storageOverProvisioningPercentage: 90
       storageMinimalAvailablePercentage: 10
       guaranteedInstanceManagerCPU: 1
