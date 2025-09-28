@@ -19,6 +19,8 @@ spec:
   releaseName: longhorn
   targetNamespace: longhorn-system
   values:
+    global:
+      imageRegistry: "docker.io"
     service:
       ui:
         type: ClusterIP
