@@ -21,7 +21,7 @@ spec:
   values:
     service:
       ui:
-        type: LoadBalancer
+        type: ClusterIP
     persistence:
       defaultClass: true
       defaultFsType: ext4
