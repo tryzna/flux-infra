@@ -40,9 +40,9 @@ spec:
       storageOverProvisioningPercentage: "90"
       storageMinimalAvailablePercentage: "10"
       guaranteedInstanceManagerCPU: "1"
-      kubernetesClusterAutoscalerEnabled: "enabled"
-      v2DataEngine: "enabled"
-      dataEngineHugepageEnabled: "enabled"
+      kubernetesClusterAutoscalerEnabled: "true"
+      v2DataEngine: "true"
+      dataEngineHugepageEnabled: "true"
       rwxVolumeFastFailover: "enabled"
     longhornUI:
       replicas: 1
