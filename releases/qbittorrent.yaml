@@ -1,0 +1,51 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: qbittorrent
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: qbittorrent
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: gabe565
+        namespace: flux-system
+      version: 0.4.1
+  interval: 30m0s
+  releaseName: qbittorrent
+  targetNamespace: media
+  values:
+    env:
+      TZ: "Europe/Moscow"
+      DOCKER_MODS: "ghcr.io/gabe565/linuxserver-mod-vuetorrent"
+    service:
+      bittorrent:
+        enabled: true
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: qb.svc.home
+            paths:
+              - path: /
+        tls:
+          - secretName: tryzna-svc
+            hosts:
+              - "qb.svc.home"
+    persistence:
+      config:
+        enabled: true
+        retain: true
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      media:
+        enabled: true
+        mountPath: /media
+        existingClaim: "media"
+      vuetorrent:
+        enabled: true
+        type: emptyDir
+
