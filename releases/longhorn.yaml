@@ -25,8 +25,8 @@ spec:
     persistence:
       defaultClass: true
       defaultFsType: ext4
-      defaultDataLocality: best-eefort
-      migratable: true
+      defaultDataLocality: best-effort
+      migratable: false
       unmapMarkSnapChainRemoved: enabled
       dataEngine: v2
     preUpgradeChecker:
