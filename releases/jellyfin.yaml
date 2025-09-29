@@ -1,0 +1,44 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: jellyfin
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: jellyfin
+        namespace: flux-system
+      version: 2.3.0
+  interval: 30m0s
+  releaseName: jellyfin
+  targetNamespace: media
+  values:
+    ingress:
+      enabled: true
+      className: "cilium"
+      hosts:
+        - host: jellyfin.svc.home
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: tryzna-svc
+          hosts:
+           - jellyfin.svc.home
+    jellyfin:
+      enableDLNA: true
+    persistence:
+      config:
+        enabled: true
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      media:
+        enabled: true
+        existingClaim: "media"
+    metrics:
+      enabled: true
+
