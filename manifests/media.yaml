@@ -9,5 +9,5 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 90Gi
+      storage: 200Gi
   storageClassName: longhorn
